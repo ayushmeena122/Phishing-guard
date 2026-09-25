@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Phishing URL Detector</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <div class="logo">🛡️</div>
+            <h1>Phishing URL Detector</h1>
+            <p>Analyze URLs for common phishing indicators</p>
+        </header>
+
+        <main>
+
+            <div class="input-section">
+                <label for="urlInput">Enter URL</label>
+
+                <div class="input-group">
+                    <input
+                        type="text"
+                        id="urlInput"
+                        placeholder="https://example.com/login"
+                        autocomplete="off"
+                    >
+
+                    <button id="analyzeBtn">
+                        Analyze URL
+                    </button>
+                </div>
+
+                <p id="errorMessage"></p>
+            </div>
+
+            <div id="resultSection" class="hidden">
+
+                <div class="score-card">
+
+                    <div>
+                        <span class="small-title">Risk Assessment</span>
+                        <h2 id="riskLevel">Low Risk</h2>
+                    </div>
+
+                    <div class="score">
+                        <span id="riskScore">0</span>
+                        <small>/100</small>
+                    </div>
+
+                </div>
+
+                <div class="progress-container">
+                    <div id="progressBar"></div>
+                </div>
+
+                <p id="resultMessage"></p>
+
+                <h3>Security Checks</h3>
+
+                <div id="checksContainer"></div>
+
+            </div>
+
+            <div class="examples">
+                <h3>Try an Example</h3>
+
+                <button class="example-btn"
+                    data-url="https://www.google.com">
+                    Safe Example
+                </button>
+
+                <button class="example-btn"
+                    data-url="http://secure-login-example.com/verify/account">
+                    Suspicious Example
+                </button>
+
+                <button class="example-btn"
+                    data-url="https://bit.ly/login-account">
+                    Shortened URL
+                </button>
+            </div>
+
+        </main>
+
+        <footer>
+            <p>
+                Educational cybersecurity project •
+                Heuristic analysis only
+            </p>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
